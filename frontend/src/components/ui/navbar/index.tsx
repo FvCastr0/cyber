@@ -4,7 +4,7 @@ import { theme } from "@/components/shared/theme";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { IoCloseSharp, IoPersonOutline } from "react-icons/io5";
@@ -131,6 +131,10 @@ const NavLinks = styled(motion.div)<{ isOpen: boolean }>`
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    if (window.screen.width > 860) setIsOpen(true);
+  }, []);
 
   return (
     <NavStyled>
