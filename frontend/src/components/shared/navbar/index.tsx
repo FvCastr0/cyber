@@ -62,7 +62,7 @@ const SearchButton = styled.div`
   }
 `;
 
-const NavLinks = styled(motion.div)<{ isOpen: boolean }>`
+const NavLinks = styled(motion.div)<{ $isOpen: boolean }>`
   display: flex;
   gap: ${theme.spacing.lg};
   align-items: center;
@@ -92,7 +92,7 @@ const NavLinks = styled(motion.div)<{ isOpen: boolean }>`
   @media (max-width: 860px) {
     display: none;
     @media (max-width: 860px) {
-      display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+      display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
       flex-direction: column;
       position: absolute;
       top: 96px;
@@ -133,7 +133,11 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    if (window.screen.width > 860) setIsOpen(true);
+    if (typeof window !== "undefined") {
+      if (window.innerWidth > 860) {
+        setIsOpen(true);
+      }
+    }
   }, []);
 
   return (
@@ -160,7 +164,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.1, ease: "easeIn" }}
-            isOpen={isOpen}
+            $isOpen={isOpen}
           >
             <Link href={"/"}>Home</Link>
             <Link href={"/"}>About</Link>

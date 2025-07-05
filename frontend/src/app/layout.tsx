@@ -1,10 +1,10 @@
 import "@/components/shared/globals.css";
-import Navbar from "@/components/ui/navbar";
+import Navbar from "@/components/shared/navbar";
 import { Inter, Poppins, Raleway } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["100", "400", "600", "700"],
   variable: "--font-inter"
 });
 

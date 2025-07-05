@@ -1,3 +1,9 @@
+import Header from "@/components/ui/header";
+
 export default function Home() {
-  return <div>asdasd</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
