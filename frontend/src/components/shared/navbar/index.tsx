@@ -19,6 +19,7 @@ const NavStyled = styled.nav`
   padding: ${theme.spacing.lg};
   justify-content: space-evenly;
   backdrop-filter: blur(8px);
+  background-color: #ffffffdd;
   box-shadow: ${theme.shadows.md};
 
   @media (max-width: 860px) {

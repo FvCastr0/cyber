@@ -1,9 +1,9 @@
 "use client";
 
+import ResponsiveImage from "@/components/shared/responsive-image";
 import ShopButton, { ButtonStyle } from "@/components/shared/shop-button";
 import { theme } from "@/components/shared/theme";
 import styled from "styled-components";
-import ResponsiveHeaderImage from "./responsive-header-image";
 
 const StyledHeader = styled.header`
   background-color: #211c24;
@@ -60,7 +60,16 @@ export default function Header() {
         <ShopButton variant={ButtonStyle.light} />
       </article>
 
-      <ResponsiveHeaderImage />
+      <ResponsiveImage
+        alt="iPhone"
+        widthToChange={1000}
+        srcMobile="/images/header/iphone-header-mobile.png"
+        widthMobile={343}
+        heightMobile={289}
+        srcDesktop="/images/header/iphone-header-desktop.png"
+        widthDesktop={400}
+        heightDesktop={632}
+      />
     </StyledHeader>
   );
 }
